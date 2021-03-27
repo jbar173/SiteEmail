@@ -13,23 +13,19 @@ enq = EnquiryEmail.objects.all()[0]
 def forward_enquiry(x):
     y = EnquiryEmail.objects.get(id=x.id)
     z = Enquiry.objects.get(id=y.enquiry.id)
-    message = []
-    message.append(y)
-    message.append(z.message)
-    message.append(z.name)
-    message.append(z.email)
-    message.append(z.phone)
+    message = (z.message,z.name,z.email,z.phone)
+    str_message = ' '.join(message)
 
     forward_email = send_mail(
     'New enquiry',
-    message,
+    str_message,
     'from@ourbusiness.com',
-    ['jb316700@gmail.com', 'jo_xxx86@hotmail.com'],)
+    ['hello@gmail.com','world@hotmail.com'])
 
     return forward_email
 
 
 if __name__ == '__main__':
-    print("hello")
+    print("Hello")
     forward_enquiry(enq)
-    print("enquiry forwarded")
+    print("finished")
