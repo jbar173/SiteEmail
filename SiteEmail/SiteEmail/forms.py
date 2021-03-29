@@ -1,7 +1,13 @@
+from django import forms
 from django.forms import ModelForm
 from enquiry import models
+from regex import validate_phone
 
 class CreateEnquiryForm(ModelForm):
+    phone = forms.CharField(validators=[validate_phone,],
+                            error_messages={'invalid': 'Please enter a valid phone number'},
+                            widget=forms.TextInput(attrs={
+                                'class': "phone-field",}))
 
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)

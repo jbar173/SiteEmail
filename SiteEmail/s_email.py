@@ -20,7 +20,7 @@ def forward_enquiry(x):
     'New enquiry',
     str_message,
     'from@ourbusiness.com',
-    ['hello@gmail.com','world@hotmail.com'])
+    ['xxxx@gmail.com','xxxx@hotmail.com'])
 
     return forward_email
 

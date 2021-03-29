@@ -11,6 +11,10 @@ class CreateEnquiry(CreateView):
     form_class = forms.CreateEnquiryForm
     success_url = reverse_lazy('enquiry:success')
 
+    def form_invalid(self,form):
+        print(f"**{form.errors.as_data()['phone'][0].code}")
+        return super().form_invalid(form)
+
     def form_valid(self,form):
         self.object = form.save(commit=False)
         self.object.save()

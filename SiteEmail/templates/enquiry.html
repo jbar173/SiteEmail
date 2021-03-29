@@ -2,9 +2,23 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <script> </script>
     <style>
       input:invalid{
         border:2px solid red;
+      }
+      .phone-field{
+        border:2px solid red;
+      }
+      ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        color: red;
+        font-family: monospace;
+      }
+      h2, h3, input{
+        font-family: monospace;
       }
     </style>
     <title></title>
@@ -25,6 +39,12 @@
           <input class="btn-btn-success" type="submit" name="enquiry" value="Send">
         </form>
       </div>
+
+      <script src={% static 'js/errors.js' %}>
+      </script>
+      <script src="http://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"></script>
 
     </body>
 </html>
